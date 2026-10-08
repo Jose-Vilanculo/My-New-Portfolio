@@ -1,16 +1,102 @@
-# React + Vite
+# Jose Vilanculo — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal developer portfolio showcasing my projects, technical skills, and experience as a Junior Software Developer.
 
-Currently, two official plugins are available:
+🌐 **Live Portfolio:** [my-new-portfolio-nu-khaki.vercel.app](https://my-new-portfolio-nu-khaki.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I'm a Junior Software Developer based in Cape Town, South Africa, focused on building modern, responsive web applications.
 
-## Expanding the ESLint configuration
+I completed a 6-month Software Engineering bootcamp through HyperionDev, where I developed a foundation in Python, Django, REST APIs, SQL, and software development principles. Since then, I've continued developing my skills independently, particularly in JavaScript and React, while building and deploying full-stack applications.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+I'm interested in Software Engineering opportunities where I can continue learning, contribute to real-world projects, and grow as a developer.
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* React
+* JavaScript
+* HTML5
+* CSS3
+* Vite
+* React Router
+* Responsive Design
+
+
+### UI & Libraries
+
+* GSAP
+* Lucide React
+* React Icons
+* Radix UI
+
+---
+
+
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Jose-Vilanculo/My-New-Portfolio.git
+```
+
+Navigate into the project:
+
+```bash
+cd <repository-name>
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will then be available locally through the URL provided by Vite.
+
+---
+
+## Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+---
+
+## Contact
+
+I'm always open to connecting with other developers, companies, and teams working on interesting software projects.
+
+**Portfolio:** [my-new-portfolio-nu-khaki.vercel.app](https://my-new-portfolio-nu-khaki.vercel.app/)
+
+**GitHub:** [github.com/Jose-Vilanculo](https://github.com/Jose-Vilanculo)
+
+**LinkedIn:** [linkedin.com/in/jose-vilanculo-22aa2b337](https://www.linkedin.com/in/jose-vilanculo-22aa2b337)
+
+**Email:** [jozivilanculo@gmail.com](mailto:jozivilanculo@gmail.com)
+
+---
+
+⭐ If you found the project interesting, feel free to check out the other repositories on my GitHub.

@@ -44,8 +44,8 @@ export const ProjectsSection = () => {
             description: 'A React portfolio where I display myself as a developer and show off some of my projects',
             image: '/projects/portfolio-laptop-mockup-2.png',
             tags: ['Javascript', 'React', 'Tailwind'],
-            demoUrl: 'https://react-portfolio-seven-pi-84.vercel.app/#hero',
-            githubUrl: 'https://github.com/Jose-Vilanculo/React-Portfolio'
+            demoUrl: 'https://my-new-portfolio-nu-khaki.vercel.app/',
+            githubUrl: 'https://github.com/Jose-Vilanculo/My-New-Portfolio'
         },
         {
             id: 5,

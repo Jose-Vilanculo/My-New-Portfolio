@@ -1,0 +1,611 @@
+.projectSection {
+    width: 100%;
+    padding: 6rem 1.5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectSection h1 {
+    color: #ffffff;
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
+    font-style: italic;
+    font-weight: 500;
+    margin: 0 0 2.5rem;
+    text-align: center;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.grid {
+    width: 100%;
+    max-width: 70%;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 1.25rem;
+
+    margin: 0 auto;
+}
+
+@media (max-width: 1050px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 650px) {
+    .projectSection {
+        padding: 4rem 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        max-width: 90%;
+        gap: 1rem;
+    }
+}
+
+
+/* =========================================
+   CARD WRAPPER
+   This is the glowing outer border.
+========================================= */
+
+.cardWrapper {
+    --cut: 10px;
+    --tab: 30%;
+    --border-size: 1px;
+
+    position: relative;
+    min-width: 0;
+
+    padding: var(--border-size);
+
+    /*
+        Purple neon border.
+        Multiple stops make the border feel slightly
+        more alive than a flat purple.
+    */
+    background: linear-gradient(
+        120deg,
+        #7c3aed 0%,
+        #a855f7 35%,
+        #c084fc 50%,
+        #9333ea 70%,
+        #6d28d9 100%
+    );
+
+    /*
+        Reference card shape:
+
+        ┌────── folder tab ────────┐
+        │                          │
+        │                          │
+        │                          │
+        │                          │
+        ╰───╮                  ╭───╯
+            ╰──────────────────╯
+    */
+
+    clip-path: polygon(
+        /* top-left vertical */
+        0 18px,
+
+        /* small horizontal before tab */
+        4px 18px,
+
+        /* tab rises */
+        7px 4px,
+
+        /* folder tab */
+        var(--tab) 4px,
+
+        /* diagonal out of tab */
+        calc(var(--tab) + 12px) 18px,
+
+        /* top-right */
+        100% 18px,
+
+        /* right side */
+        100% calc(100% - var(--cut)),
+
+        /* bottom-right diagonal */
+        calc(100% - var(--cut)) 100%,
+
+        /* bottom edge */
+        calc(var(--tab) - 4px) 100%,
+
+        /* bottom-left angled notch */
+        calc(var(--tab) - 13px) calc(100% - var(--cut)),
+
+        /* lower-left */
+        4px calc(100% - var(--cut)),
+
+        /* left side */
+        0 calc(100% - var(--cut) - 4px)
+    );
+
+    animation: purpleGlow 4s ease-in-out infinite;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* =========================================
+   ANIMATED BORDER GLOW
+========================================= */
+
+@keyframes purpleGlow {
+    0%,
+    100% {
+        filter:
+            drop-shadow(0 0 3px rgba(139, 92, 246, 0.25))
+            drop-shadow(0 0 8px rgba(139, 92, 246, 0.12));
+    }
+
+    50% {
+        filter:
+            drop-shadow(0 0 5px rgba(168, 85, 247, 0.55))
+            drop-shadow(0 0 14px rgba(139, 92, 246, 0.28));
+    }
+}
+
+.cardWrapper:hover {
+    transform: translateY(-3px);
+
+    animation: none;
+
+    filter:
+        drop-shadow(0 0 5px rgba(168, 85, 247, 0.65))
+        drop-shadow(0 0 15px rgba(139, 92, 246, 0.3))
+        drop-shadow(0 12px 22px rgba(76, 29, 149, 0.25));
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.55rem;
+
+    /*
+        Slightly generous top padding to account
+        for the folder tab.
+    */
+    padding:
+        2.2rem
+        0.9rem
+        1.2rem;
+
+    background:
+        rgba(0, 0, 0, 0.89);
+
+    /*
+        Same shape as wrapper, slightly adjusted
+        so the purple edge remains visible.
+    */
+    clip-path: polygon(
+        0 18px,
+        4px 18px,
+
+        7px 5px,
+
+        29.5% 5px,
+
+        calc(29.5% + 12px) 18px,
+
+        100% 18px,
+
+        100% calc(100% - 10px),
+
+        calc(100% - 10px) 100%,
+
+        29% 100%,
+
+        calc(29% - 13px) calc(100% - 10px),
+
+        4px calc(100% - 10px),
+
+        0 calc(100% - 14px)
+    );
+}
+
+
+/* =========================================
+   SMALL CORNER DETAILS
+========================================= */
+
+.corner {
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border: 1px solid rgba(192, 132, 252, 0.75);
+
+    opacity: 0.9;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(0 0 3px rgba(168, 85, 247, 0.35));
+
+    transition:
+        border-color 0.3s ease,
+        filter 0.3s ease;
+}
+
+.cardWrapper:hover .corner {
+    border-color: rgba(216, 180, 254, 0.95);
+
+    filter:
+        drop-shadow(0 0 5px rgba(168, 85, 247, 0.6));
+}
+
+
+/* top-right */
+
+.corner[data-pos="tr"] {
+    top: 18px;
+    right: 0;
+
+    border-left: none;
+    border-bottom: none;
+
+    border-radius: 0 4px 0 0;
+}
+
+
+/* bottom-left */
+
+.corner[data-pos="bl"] {
+    bottom: 0;
+    left: 0;
+
+    border-right: none;
+    border-top: none;
+
+    border-radius: 0 0 0 4px;
+}
+
+
+/* bottom-right */
+
+.corner[data-pos="br"] {
+    bottom: 0;
+    right: 0;
+
+    border-left: none;
+    border-top: none;
+
+    border-radius: 0 0 4px 0;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title {
+    color: #ffffff;
+
+    font-size: clamp(1rem, 1vw, 1.1rem);
+    font-weight: 500;
+    line-height: 1.2;
+
+    margin: 0;
+
+    letter-spacing: -0.01em;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description {
+    color: rgba(255, 255, 255, 0.819);
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    font-size: clamp(0.82rem, 0.7vw, 0.9rem);
+
+    line-height: 1.45;
+
+    margin: 0;
+
+    min-height: 3.8em;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+========================================= */
+
+.tags {
+    color: #ba8cff;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    font-size: clamp(0.68rem, 0.65vw, 0.78rem);
+
+    font-weight: 500;
+
+    line-height: 1.35;
+
+    margin: 0 0 0.15rem;
+
+    text-shadow:
+        0 0 8px rgba(168, 85, 247, 0.15);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.imageWrap {
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    border: 1px solid rgba(168, 85, 247, 0.22);
+
+    background: #111018;
+
+    box-shadow:
+        inset 0 0 15px rgba(139, 92, 246, 0.04);
+
+    margin-top: 0.1rem;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.cardWrapper:hover .imageWrap {
+    border-color: rgba(192, 132, 252, 0.45);
+
+    box-shadow:
+        0 0 10px rgba(139, 92, 246, 0.10),
+        inset 0 0 16px rgba(139, 92, 246, 0.05);
+}
+
+.imageWrap img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+.cardWrapper:hover .imageWrap img {
+    transform: scale(1.015);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: auto;
+    padding-top: 0.15rem;
+}
+
+
+/* =========================================
+   CODE LINK
+========================================= */
+
+.codeLink {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 0.3rem;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    font-size: 0.8rem;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+.codeLink:hover {
+    color: #d8b4fe;
+
+    text-shadow:
+        0 0 8px rgba(168, 85, 247, 0.4);
+}
+
+
+/* =========================================
+   DEMO BUTTON
+========================================= */
+
+.demoButton {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 78px;
+
+    padding: 0.25rem 1rem;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(168, 85, 247, 0.65);
+
+    background: rgba(139, 92, 246, 0.08);
+
+    color: #ffffff;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    box-shadow:
+        inset 0 0 8px rgba(139, 92, 246, 0.03);
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.demoButton:hover {
+    background: rgba(139, 92, 246, 0.2);
+
+    border-color: rgba(216, 180, 254, 0.9);
+
+    box-shadow:
+        0 0 8px rgba(168, 85, 247, 0.35),
+        0 0 16px rgba(139, 92, 246, 0.15);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+    .card {
+        padding:
+            1.55rem
+            0.8rem
+            0.65rem;
+    }
+
+    .description {
+        min-height: 4.2em;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+    .cardWrapper {
+        --tab: 31%;
+    }
+
+    .card {
+        padding:
+            1.7rem
+            0.9rem
+            0.75rem;
+    }
+
+    .title {
+        font-size: 0.95rem;
+    }
+
+    .description {
+        font-size: 0.68rem;
+        min-height: auto;
+    }
+
+    .tags {
+        font-size: 0.62rem;
+    }
+
+    .demoButton {
+        min-width: 82px;
+        padding: 0.4rem 1rem;
+    }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .cardWrapper {
+        animation: none;
+        transition: none;
+    }
+
+    .cardWrapper:hover {
+        transform: none;
+    }
+
+    .imageWrap img,
+    .demoButton,
+    .codeLink {
+        transition: none;
+    }
+}

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+.navbar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 20px;
+    left: 15%;;
+    z-index: 50;
+    width: 70%;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(53, 52, 53, 0.1);
+    backdrop-filter: blur(35px);
+    border-radius: 15px;
+}
+
+.leftSide {
+    margin-left: 20px;
+}
+
+.navbar a, h1 {
+    color: white;
+    cursor: pointer;
+
+}
+
+.rightSide {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-right: 10px;
+}
+
+.rightSide .resume {
+    font-size: 0.9rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    padding: 0 0.8rem;
+
+}
+
+/* ----- Media Quesries ----- */
+@media (max-width: 600px) {
+    .navbar {
+        /* display: none; */
+        width: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 0px;
+        border: none;
+        backdrop-filter: blur(80px);
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+    .navbar {
+        width: 80%;
+        left: 10%;
+    }
+}

@@ -1,0 +1,19 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+  color: rgb(199, 194, 245);
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: italic;
+  margin-left: 10px;
+}
+
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}

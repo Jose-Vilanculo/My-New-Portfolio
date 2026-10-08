@@ -1,0 +1,145 @@
+.codePortfolio {
+    position: relative;
+    z-index: 10;
+    width: 45%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(44, 8, 78, 0.7);
+    border: 1px solid rgba(132, 0, 255, 0.3);
+    box-shadow: 0 12px 30px -18px rgba(132, 0, 255, 0.4);
+        animation:
+        codePortfolioReveal
+        1.5s cubic-bezier(0.22, 1, 0.36, 1)
+        0.5s
+        both;
+}
+
+.top {
+    height: 2rem;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 1px solid rgba(132, 0, 255, 0.3);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.dots {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 6px;
+    margin-left: 10px;
+    padding-right: 10px;
+    border-right: 2px solid rgba(132, 0, 255, 0.3);
+}
+
+.red, .yellow, .green {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: rgb(255, 50, 50);
+}
+
+.yellow {
+    background-color: rgb(255, 209, 2);
+}
+
+.green {
+    background-color: rgb(0, 201, 0);
+}
+
+.selectedFile, .file {
+    font-weight: 200;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    margin: auto 0;
+    border-right: 2px solid rgba(132, 0, 255, 0.3);
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.selectedFile {
+    background-color: rgb(108, 18, 192);
+}
+
+.file {
+    color: rgb(210, 208, 211);
+}
+
+.middle {
+    width: 100%;
+    /* height: calc(300px - 4rem); */
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: rgb(152, 200, 241);
+}
+
+.numbers {
+    width: 53px;
+    height: 100%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    
+}
+
+.code {
+    height: 100%;
+    color: rgb(10, 196, 10);
+    display: flex;
+    flex-direction: column;
+}
+
+.blue {
+    color: rgb(85, 208, 253);
+}
+
+.grey {
+    color: rgb(148, 148, 148);
+}
+
+
+.bottom {
+    position: relative;
+    bottom: 0;
+    height: 1.5rem;
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: rgba(3, 3, 3, 0.73);
+}
+
+
+/* -----Animations ----- */
+@keyframes codePortfolioReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-70px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* ----- Media Quesries ----- */
+@media (max-width: 1024px) {
+  .codePortfolio {
+    display: none;
+  }
+}

@@ -1,0 +1,119 @@
+.footer {
+  width: 100%;
+  padding: 3em 1.5em 100px;
+  background: black;
+}
+
+.inner {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.topRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  max-width: 260px;
+}
+
+.brandName {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.brandTagline {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.quickLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4em;
+}
+
+.quickLink {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.quickLink:hover {
+  color: #b28cff;
+}
+
+.socials {
+  display: flex;
+  gap: 0.7em;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(132, 0, 255, 0.08);
+  border: 1px solid rgba(132, 0, 255, 0.25);
+  color: #b28cff;
+  transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.socialIcon:hover {
+  border-color: rgba(132, 0, 255, 0.6);
+  color: #d6c2ff;
+  box-shadow: 0 0 16px rgba(132, 0, 255, 0.4);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.5em;
+}
+
+.bottomRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6em;
+}
+
+.copyright,
+.builtWith {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .topRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inner {
+    max-width: 90%;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    gap: 0.3em;
+  }
+}

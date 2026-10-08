@@ -1,0 +1,89 @@
+.dock-outer {
+  margin: 0 0.5rem;
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+}
+
+.dock-panel {
+  position: fixed;
+  z-index: 50;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  width: fit-content;
+  gap: 1rem;
+  border-radius: 1rem;
+  background-color: #120F17;
+  border: 1px solid #8b5cf6;
+  animation: aiGlow 4s ease-in-out infinite;
+  padding: 0 0.5rem 0.5rem;
+}
+
+@keyframes aiGlow {
+    0% {
+        box-shadow:
+            0 0 5px rgba(139, 92, 246, 0.4),
+            0 0 10px rgba(139, 92, 246, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 0 8px rgba(139, 92, 246, 0.8),
+            0 0 20px rgba(34, 211, 238, 0.6),
+            0 0 35px rgba(139, 92, 246, 0.35);
+    }
+
+    100% {
+        box-shadow:
+            0 0 5px rgba(34, 211, 238, 0.4),
+            0 0 10px rgba(139, 92, 246, 0.2);
+    }
+}
+
+.dock-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #120F17;
+  border: 1px solid #222;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+@media (hover: hover) {
+  .dock-item:hover {
+    border-color: #8b5cf6;
+    animation: aiGlow 2s ease-in-out infinite;
+  }
+}
+
+.dock-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dock-label {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  width: fit-content;
+  white-space: pre;
+  border-radius: 0.375rem;
+  border: 1px solid #222;
+  background-color: #120F17;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  color: #fff;
+  transform: translateX(-50%);
+}

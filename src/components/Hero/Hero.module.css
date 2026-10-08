@@ -1,0 +1,262 @@
+.heroSection {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(12, 6, 25);
+    display: flex;
+}
+
+.content {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin:  0 auto;
+}
+
+.contentLeft {
+    position: relative;
+
+    z-index: 10;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    animation: heroLeftReveal 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+
+.heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-style: italic;
+    margin-left: 10px;
+    color: white;
+    word-spacing: 2px;
+}
+
+.links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.links button {
+    position: relative;
+
+    font-size: 0.9rem;
+    width: 11rem;
+    height: 3rem;
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* View My Work */
+.links .myWork {
+    background-color: white;
+    color: black;
+}
+
+.links .myWork:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 12px rgba(168, 85, 247, 0.25),
+        0 0 30px rgba(132, 0, 255, 0.18);
+}
+
+
+/* Download CV */
+.links .resume {
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    background-color: rgba(53, 52, 53, 0.1);
+
+    backdrop-filter: blur(25px);
+}
+
+.links .resume:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(168, 85, 247, 0.45);
+
+    background-color: rgba(132, 0, 255, 0.06);
+
+    box-shadow:
+        0 0 12px rgba(168, 85, 247, 0.3),
+        0 0 30px rgba(132, 0, 255, 0.18),
+        inset 0 0 12px rgba(132, 0, 255, 0.05);
+}
+
+
+.socials {
+  display: flex;
+  gap: 0.9em;
+  margin-top: 1rem;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.326);
+  backdrop-filter: blur(15px);
+  transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.socialIcon:hover {
+  border-color: rgba(132, 0, 255, 0.8);
+  color: white;
+  box-shadow: 0 0 16px rgba(132, 0, 255, 0.8);
+}
+
+
+/* ----- Animations ----- */
+
+
+.contentLeft > .heading {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(6px);
+
+    animation:
+        heroElementReveal
+        0.8s cubic-bezier(0.22, 1, 0.36, 1)
+        0.1s
+        forwards;
+}
+
+
+/* José Vilanculo / TechText */
+.contentLeft > :nth-child(2) {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(7px);
+
+    animation:
+        heroElementReveal
+        0.9s cubic-bezier(0.22, 1, 0.36, 1)
+        0.25s
+        forwards;
+}
+
+
+/* Typing text */
+.contentLeft > :nth-child(3) {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(5px);
+
+    animation:
+        heroElementReveal
+        0.8s cubic-bezier(0.22, 1, 0.36, 1)
+        0.45s
+        forwards;
+}
+
+
+/* Buttons container */
+.contentLeft > .links {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(5px);
+
+    animation:
+        heroElementReveal
+        0.8s cubic-bezier(0.22, 1, 0.36, 1)
+        0.65s
+        forwards;
+}
+
+
+/* Social icons container */
+.contentLeft > .socials {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(5px);
+
+    animation:
+        heroElementReveal
+        0.8s cubic-bezier(0.22, 1, 0.36, 1)
+        0.85s
+        forwards;
+}
+
+
+@keyframes heroElementReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+
+.socials .socialIcon {
+    opacity: 0;
+    transform: translateY(12px) scale(0.92);
+
+    animation:
+        socialIconReveal
+        0.5s cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+.socials .socialIcon:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.socials .socialIcon:nth-child(2) {
+    animation-delay: 1.08s;
+}
+
+.socials .socialIcon:nth-child(3) {
+    animation-delay: 1.16s;
+}
+
+.socials .socialIcon:nth-child(4) {
+    animation-delay: 1.24s;
+}
+
+@keyframes socialIconReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+
+/* ----- Media Quesries ----- */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    /* background-color: red; */
+  }
+}

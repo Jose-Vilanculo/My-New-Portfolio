@@ -87,3 +87,14 @@
   color: #fff;
   transform: translateX(-50%);
 }
+
+/* Mobile */
+@media (max-width: 480px) {
+  .dock-panel {
+    width: 85%;
+    justify-content: space-evenly;
+  }
+  .dock-label {
+    width: 300px;
+  }
+}

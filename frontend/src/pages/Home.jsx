@@ -7,6 +7,7 @@ import Scanner from "@/components/Hero/Scanner";
 import { FooterSection } from "@/components/Footer/Footer";
 import { ContactSection } from "@/components/Content/Sections/Contact/Contact";
 import { navigateTo } from "@/assets/navigate";
+import { ChatBot } from "@/components/ChatBot/ChatBot";
 
 export const Home = () => {
 
@@ -59,9 +60,11 @@ export const Home = () => {
         <Dock
             items={items}
             panelHeight={65}
-            baseItemSize={45}
+            baseItemSize={50}
             magnification={70}
         />
+
+        <ChatBot />
 
         <FooterSection />
         

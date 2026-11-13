@@ -109,11 +109,12 @@ export const ChatBot = () => {
         // Local default: http://127.0.0.1:8000/api
         const apiBaseUrl = (
             import.meta.env.VITE_CHATBOT_API_URL ||
-            'http://127.0.0.1:8000/api'
+            'http://127.0.0.1:8000'
         ).replace(/\/$/, '');
+        console.log(apiBaseUrl)
 
         try {
-            const response = await fetch(`${apiBaseUrl}/chat/`, {
+            const response = await fetch(`${apiBaseUrl}/api/chat/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

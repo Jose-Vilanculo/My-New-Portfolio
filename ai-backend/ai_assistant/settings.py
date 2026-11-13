@@ -25,7 +25,6 @@ ALLOWED_HOSTS = [
 ]
 
 # CORS
-# CORS
 CORS_ALLOWED_ORIGINS = [
     origin.strip()
     for origin in os.getenv(
